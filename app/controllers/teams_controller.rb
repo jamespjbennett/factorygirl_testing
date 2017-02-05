@@ -51,6 +51,13 @@ class TeamsController < ApplicationController
     end
   end
 
+  def players
+    @team = Team.find(params[:id])
+    respond_to do  |format|
+      format.js
+    end
+  end
+
   # DELETE /teams/1
   # DELETE /teams/1.json
   def destroy

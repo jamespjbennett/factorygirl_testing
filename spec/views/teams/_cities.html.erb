@@ -1,0 +1,17 @@
+<% @country.cities.each do |city| %>
+  <tr class="cities">
+    <td>   </td>
+    <td><%= city.id %></td>
+    <td><%= city.name %></td>
+    <td><%= city.population %></td>
+  </tr>
+<% end %>
+
+<% @teams.players.each do |player| %>
+	<tr class="players">
+		<td></td>
+		<td><%= player.id %></td>
+		<td><%= player.name %></td>
+		<td><%= player.rating %></td>
+	</tr>
+<% end %>
