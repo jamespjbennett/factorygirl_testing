@@ -10,7 +10,7 @@ feature 'players management' do
 
 	scenario '', js: true do 
 		visit root_path
-		find('#aBarcelona').click
+		find('a#Barcelona').click
 		expect(page).to have_css 'table td', text: 'Ronaldo' 
 	end
 
