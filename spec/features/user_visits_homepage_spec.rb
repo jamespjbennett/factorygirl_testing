@@ -3,6 +3,6 @@ feature "user visits homepage" do
 	scenario 'successfully' do
 		visit root_path
 		expect(page).to have_css 'h1'
-		expect(page).to have_css 'listing teams'
+		expect(page).to have_content 'listing teams'
 	end
 end
