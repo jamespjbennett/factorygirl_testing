@@ -9,6 +9,10 @@ FactoryGirl.define do
     name { Faker::Name.name   }
     rating { Faker::Number.number(2) }
   end
+
+  factory :invalid_team do
+  	name nil
+  end
 end
   
 
