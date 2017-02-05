@@ -1,33 +1,14 @@
 require 'rails_helper'
 
-
 RSpec.describe Team, type: :model do
 	describe Team do
-		describe 'validations' do 
-			it 'is valid with a name and rating' do
-				team = build(:team)
-				expect(team).to be_valid
-			end
-
-			it 'is invalid without a name' do
-				team = build(:team, name:nil)
-				team.valid?
-				expect(team.errors[:name]).to include("can't be blank")
-
-			end
-
-			it 'is invalid without a rating' do
-				team = build(:team, rating:nil)
-				team.valid?
-				expect(team.errors[:rating]).to include("can't be blank")
-			end
+		context 'validations' do 
+			it {should validate_presence_of :name}
+			it {should validate_presence_of :rating}
 		end
 
-		describe 'assoscations' do 
-			it 'has_many players' do
-				assc = described_class.reflect_on_association(:players)
-				expect(assc.macro).to eq :has_many
-			end	
+		context 'assosciations' do 
+			it { should have_many(:players) }
 		end
 
 		it 'has a valid factory' do
