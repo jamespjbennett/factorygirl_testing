@@ -38,9 +38,15 @@ RSpec.describe TeamsController, type: :controller do
 
   describe "GET #index" do
     it "assigns all teams as @teams" do
-      team = Team.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(assigns(:teams)).to eq([team])
+      # team = Team.create! valid_attributes
+      # get :index, params: {}, session: valid_session
+      # expect(assigns(:teams)).to eq([team])
+
+
+      france = create(:team, name: "France", rating: 80)
+      germany = create(:team, name: "Germany", rating: 70)
+      get :index
+      expect(assigns(:teams)).to eq([france, germany])
     end
   end
 
