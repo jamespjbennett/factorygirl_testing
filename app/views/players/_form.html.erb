@@ -21,6 +21,11 @@
     <%= f.number_field :rating %>
   </div>
 
+  <div class="field">
+    <%= f.label :team_id %>
+    <%= f.collection_select :team_id, Team.all, :id, :name, {include_blank: 'Choose a team'} %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

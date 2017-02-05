@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "players/edit", type: :view do
   before(:each) do
-    @player = assign(:player, Player.create!(
+    @team = assign(:team, Team.create!(
       :name => "MyString",
       :rating => 1
+    ))
+    @player = assign(:player, Player.create!(
+      :name => "MyString",
+      :rating => 1,
+      :team_id => @team.id
     ))
   end
 

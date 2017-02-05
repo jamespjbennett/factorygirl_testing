@@ -11,6 +11,7 @@ feature 'player management' do
 		expect{
 			click_link 'New Player'
 			fill_in 'Name', with: 'Cristiano Ronaldo'
+			select 'Barcelona', from: 'Team'
 			fill_in 'Rating', with: 90
 			click_button 'Create Player'
 		}.to change(Player, :count).by(1)

@@ -1,9 +1,6 @@
 
 FactoryGirl.define do
-  factory :player do
-    name "MyString"
-    rating 1
-  end
+
   factory :team do
     name {  Faker::Name.name }
     rating {Faker::Number.number(2)}

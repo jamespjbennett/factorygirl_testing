@@ -2,14 +2,21 @@ require 'rails_helper'
 
 RSpec.describe "players/index", type: :view do
   before(:each) do
+    @team = assign(:team, Team.create!(
+      :name => "MyString",
+      :rating => 1
+    ))
     assign(:players, [
       Player.create!(
         :name => "Name",
-        :rating => 2
+        :rating => 2,
+        :team_id => @team.id
       ),
       Player.create!(
         :name => "Name",
-        :rating => 2
+        :rating => 2,
+        :team_id => @team.id
+        
       )
     ])
   end
