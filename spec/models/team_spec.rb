@@ -18,7 +18,6 @@ RSpec.describe Team, type: :model do
 
 			it 'is invalid without a rating' do
 				team = build(:team, rating:nil)
-				team = build(:team)
 				team.valid?
 				expect(team.errors[:rating]).to include("can't be blank")
 			end
