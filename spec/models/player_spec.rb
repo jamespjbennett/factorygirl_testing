@@ -1,13 +1,7 @@
 require 'rails_helper'
 
 
-FactoryGirl.define do
-  factory :player do
-    association :team
-    name { Faker::Name.name   }
-    rating { Faker::Number.number(2) }
-  end
-end
+
 
 
 RSpec.describe Player, type: :model do
