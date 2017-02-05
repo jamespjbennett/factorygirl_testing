@@ -13,6 +13,10 @@ FactoryGirl.define do
   factory :invalid_team do
   	name nil
   end
+
+  factory :invalid_player do
+  	name nil
+  end
 end
   
 
